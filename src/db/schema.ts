@@ -118,7 +118,7 @@ export const trackingLogsTable = pgTable(
       .references(() => usersTable.id, { onDelete: 'cascade' }),
     tag: text('tag'),
     type: trackingLogTypeEnum('type').notNull(),
-    timestamp: commonFieldDefs.date('timestamp').notNull().defaultNow(),
+    timestamp: commonFieldDefs.date('timestamp').notNull().defaultNow()
   },
   table => [
     index('tracking_logs_userId_timestamp_idx').on(
