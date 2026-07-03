@@ -1,3 +1,4 @@
+import { apiKey } from '@better-auth/api-key'
 import { validateEmail } from '@ejekanshjain/simple-email-validator'
 import { createId } from '@paralleldrive/cuid2'
 import { APIError, betterAuth } from 'better-auth'
@@ -10,6 +11,7 @@ import { start } from 'workflow/api'
 import { db } from '~/db'
 import {
   accountsTable,
+  apikeysTable,
   sessionsTable,
   usersTable,
   verificationsTable
@@ -25,7 +27,8 @@ export const auth = betterAuth({
       user: usersTable,
       session: sessionsTable,
       account: accountsTable,
-      verification: verificationsTable
+      verification: verificationsTable,
+      apikey: apikeysTable
     }
   }),
   account: {
@@ -86,7 +89,8 @@ export const auth = betterAuth({
       }
     }),
     admin(),
-    lastLoginMethod()
+    lastLoginMethod(),
+    apiKey()
   ],
   hooks: {
     before: createAuthMiddleware(async ctx => {

@@ -1,5 +1,6 @@
 'use client'
 
+import { apiKeyClient } from '@better-auth/api-key/client'
 import {
   adminClient,
   inferAdditionalFields,
@@ -15,6 +16,7 @@ export const { signIn, signOut, useSession, getLastUsedLoginMethod } =
       inferAdditionalFields<typeof auth>(),
       magicLinkClient(),
       adminClient(),
-      lastLoginMethodClient()
+      lastLoginMethodClient(),
+      apiKeyClient()
     ]
   })
