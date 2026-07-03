@@ -13,7 +13,6 @@ import type { auth } from './auth'
 export const {
   signIn,
   signOut,
-  useSession,
   getLastUsedLoginMethod,
   apiKey,
   updateUser,
