@@ -1,4 +1,4 @@
-import { Clock, History, UserCog } from 'lucide-react'
+import { Clock, History, LayoutDashboard, UserCog } from 'lucide-react'
 import type { SidebarNavGroup } from '~/components/navigation-sidebar'
 
 export const getAppNavigation = (): SidebarNavGroup[] => [
@@ -6,10 +6,15 @@ export const getAppNavigation = (): SidebarNavGroup[] => [
     label: 'Workspace',
     items: [
       {
-        title: 'Tracking logs',
+        title: 'Dashboard',
         url: '/app',
-        icon: History,
+        icon: LayoutDashboard,
         exact: true
+      },
+      {
+        title: 'Tracking logs',
+        url: '/app/tracking-logs',
+        icon: History
       },
       {
         title: 'Manual entry',
