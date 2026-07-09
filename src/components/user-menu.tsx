@@ -1,6 +1,6 @@
 'use client'
 
-import { LogOut, UserCog } from 'lucide-react'
+import { KeyRound, LogOut, UserCog } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ThemeToggle } from '~/components/theme-toggle'
@@ -72,6 +72,12 @@ export function UserMenu({
             <Link href="/profile">
               <UserCog className="mr-2 size-4" />
               <span>Profile</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/api-keys">
+              <KeyRound className="mr-2 size-4" />
+              <span>API keys</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem
